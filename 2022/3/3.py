@@ -17,7 +17,6 @@ with open('3.txt') as f:
 		for char in comp2:
 			if char in comp1:
 				priority = getPriority(char)
-				# print(char, priority)
 				total += priority
 				break
 

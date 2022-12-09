@@ -1,17 +1,18 @@
+f = open('1.txt')
 elves = []
 elf = 0
 
-with open('1.txt') as f:
-	for line in f:
-		if line == '\n':
-			elves.append(elf)
-			elf = 0
-			continue
+for line in f:
+	num = line.strip() 
+	if num:
+		elf += int(num)
+	else:
+		elves.append(elf)
+		elf = 0
 
-		else: 
-			num = int(line)
-			elf += num
+elves.sort(reverse=True)
 
-elves.sort()
+ans1 = elves[0]
+ans2 = sum(elves[:3])
 
-print(elves[-1], elves[-1] + elves[-2] + elves[-3])
+print(ans1, ans2)
